@@ -35,41 +35,44 @@ function App() {
   const [cart, setCart] = useState({
     products: [],
     visible: false,
+    totalQty: 0,
+    totalPrice: 0,
   });
 
   function updateCart(id, prod, add = true) {
     const newCart = [...cart.products];
+    let totalCartQty = cart.totalQty || 0;
+    let totalPrice = cart.totalPrice;
 
     const index = newCart.findIndex((el) => el.id === id);
 
     if (index !== -1 && add) {
       newCart[index].quantity += 1;
+      totalCartQty += 1;
+      totalPrice += prod.price;
     } else if (index !== -1 && !add) {
       newCart[index].quantity -= 1;
+      totalCartQty -= 1;
+      totalPrice -= prod.price;
       if (newCart[index].quantity === 0) newCart.splice(index, 1);
     } else {
       prod.quantity = 1;
       newCart.push(prod);
+      totalCartQty += 1;
+      totalPrice += prod.price;
     }
 
     setCart({
       ...cart,
       products: [...newCart],
+      totalQty: totalCartQty,
+      totalPrice: +totalPrice.toFixed(2),
     });
-
-    console.log(cart);
-  }
-
-  function calcCartTotal() {
-    let total = 0;
-    cart.map((el) => (total += el.price * el.quantity));
-
-    return total;
   }
 
   function toggleCart() {
     setCart({
-      products: [...cart.products],
+      ...cart,
       visible: !cart.visible,
     });
   }
@@ -88,6 +91,7 @@ function App() {
               updateCart={updateCart}
               products={products}
               cartHandler={updateCart}
+              toggleCart={toggleCart}
             />
           }
         />

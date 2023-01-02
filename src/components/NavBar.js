@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/nav.css';
-import cartImg from '../imgs/cart-outline.svg';
+
 import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
@@ -15,12 +15,19 @@ const NavBar = (props) => {
           Shop
         </NavLink>
       </div>
-      <img
-        onClick={props.toggleCart}
-        className='cartImg'
-        src={cartImg}
-        alt='Cart'
-      ></img>
+      {/* <div className='cartImgContainer'>
+        <img
+          onClick={props.toggleCart}
+          className='cartImg'
+          src={cartImg}
+          alt='Cart'
+        />
+        {props.cart.totalQty > 0 ? (
+          <div className='cartQty'>{props.cart.totalQty}</div>
+        ) : (
+          ''
+        )}
+      </div> */}
     </div>
   );
 };

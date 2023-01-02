@@ -1,21 +1,25 @@
 .cart {
   position: fixed;
-  width: 45vw;
+  max-width: fit-content;
   min-height: 100vh;
   right: 0;
   top: 0;
   z-index: 9999;
   background-color: #fcefef;
-  color: #995d81;
+  color: #153243;
   transition: 0.3s;
+
+  border-left: #153243 solid 5px;
 }
 
 .cardCart {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   width: 90%;
   justify-content: space-between;
   align-items: center;
-  margin: 10px;
+  padding: 20px 15px 20px;
+  border-bottom: #995d81 solid 1px;
 }
 
 .productCartName {
@@ -32,20 +36,33 @@
 }
 
 .cartHeader {
-  display: flex;
-  align-items: center;
   font-size: 1.5rem;
   background-color: #995d81;
   color: #fcefef;
-  justify-content: space-around;
 }
 
 .cartTitle {
   padding: 10px 20px;
+  text-align: center;
+  position: relative;
 }
 
 .closeCart {
   padding: 0px 10px;
+  position: absolute;
+  left: 3%;
+  top: 16.66%;
+
+  border-radius: 20%;
+  border: solid 1px #fcefef;
+  background-color: #995d81;
+  color: #fcefef;
+}
+
+.closeCart:hover {
+  border: none;
+  color: #995d81;
+  background-color: #fcefef;
 }
 
 .showCart {
@@ -54,5 +71,33 @@
 }
 
 .hideCart {
-  transform: translate3d(45vw, 0, 0);
+  transform: translate3d(100vw, 0, 0);
+}
+
+.cartQtyBtns {
+  display: flex;
+  color: #995d81;
+  background-color: #fcefef;
+}
+
+.cartTotals {
+  width: 70%;
+  margin: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.cartTotalBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.checkoutBtn {
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  position: right;
 }
