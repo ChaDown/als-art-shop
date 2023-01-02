@@ -77,7 +77,7 @@ function App() {
   return (
     <div>
       <NavBar cart={cart} toggleCart={toggleCart} />
-      <Cart cart={cart} cartHandler={updateCart} />
+      <Cart cart={cart} cartHandler={updateCart} toggleCart={toggleCart} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route

@@ -2,12 +2,15 @@ import React from 'react';
 import './styles/cart.css';
 
 const Cart = (props) => {
-  if (!props.cart.visible) return;
+  const cartClass = props.cart.visible ? 'showCart' : 'hideCart';
+  const classes = `cart ${cartClass}`;
 
   return (
-    <div className='cart'>
+    <div className={classes}>
       <div className='cartHeader'>
-        <div onClick={props.toggleCart}>X</div>
+        <div className='closeCart' onClick={props.toggleCart}>
+          X
+        </div>
         <div className='cartTitle'>Shopping Cart</div>
       </div>
 

@@ -7,6 +7,7 @@
   z-index: 9999;
   background-color: #fcefef;
   color: #995d81;
+  transition: 0.3s;
 }
 
 .cardCart {
@@ -41,4 +42,17 @@
 
 .cartTitle {
   padding: 10px 20px;
+}
+
+.closeCart {
+  padding: 0px 10px;
+}
+
+.showCart {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+
+.hideCart {
+  transform: translate3d(45vw, 0, 0);
 }
