@@ -1,3 +1,9 @@
+body {
+  background-image: url('../../imgs/bgmanda.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .productContainer {
   display: flex;
   flex-wrap: wrap;

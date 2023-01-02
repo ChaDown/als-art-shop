@@ -1,23 +1,37 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0;
-}
-
 .NavBar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
-  background-color: black;
+  background-color: #995d81;
   padding: 10px 30px;
   color: rgb(216, 216, 216);
 }
 
+.pages {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .tab {
-  color: rgb(216, 216, 216);
+  color: #fcefef;
   text-decoration: none;
 }
 
 .cartImg {
   height: 1.5rem;
+  position: fixed;
+  right: 40px;
+}
+
+.cartImg:hover {
+  height: 1.6rem;
+}
+
+.title {
+  color: #fcefef;
 }
 
 .pages {

@@ -3,19 +3,24 @@ import './styles/nav.css';
 import cartImg from '../imgs/cart-outline.svg';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div className='NavBar'>
       <div className='title'>Al's Art Shop</div>
       <div className='pages'>
-        <NavLink className='tab' to='/' activeClassName='currentTab'>
+        <NavLink className='tab' to='/'>
           Home
         </NavLink>
-        <NavLink className='tab' to='/shop' activeClassName='currentTab'>
+        <NavLink className='tab' to='/shop'>
           Shop
         </NavLink>
       </div>
-      <img className='cartImg' src={cartImg} alt='Cart'></img>
+      <img
+        onClick={props.toggleCart}
+        className='cartImg'
+        src={cartImg}
+        alt='Cart'
+      ></img>
     </div>
   );
 };

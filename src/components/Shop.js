@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
-import dotImg from '../imgs/dot.jpg';
-import ganesha from '../imgs/ele.jpg';
-import elephant from '../imgs/ele2.jpg';
-import fatima from '../imgs/hand.jpg';
-import octopus from '../imgs/octopus.jpg';
-import red from '../imgs/red.jpg';
-import yel2 from '../imgs/yel2.jpg';
-import yellow from '../imgs/yellow.jpg';
-import ProductCard from './ProductCard';
+import React from 'react';
+//import ProductCard from './ProductCard';
+import './styles/shop.css';
 
-const Shop = () => {
-  const products = [
-    { name: 'Australian Dot', price: 24.99, image: dotImg },
-    { name: 'Ganesha', price: 34.99, image: ganesha },
-    { name: 'Pale Elephant', price: 29.99, image: elephant },
-    { name: 'Fatimas Hand', price: 29.99, image: fatima },
-    { name: 'Octopus', price: 19.99, image: octopus },
-    { name: 'Red Lotus', price: 29.99, image: red },
-    { name: 'Mandala', price: 19.99, image: yel2 },
-    { name: 'Yellow Lotus', price: 39.99, image: yellow },
-  ];
-
+const Shop = (props) => {
   return (
-    <div>
-      <ProductCard products={products} />
+    <div className='content'>
+      <div>
+        {props.products.map((prod, index) => (
+          <div key={index} className='productContainer'>
+            <div className='card'>
+              <div className='productName'>{prod.name}</div>
+              <img src={prod.image} alt={prod.name}></img>
+              <div className='productBottomRow'>
+                <span className='price'>€{prod.price}</span>
+                <div>{prod.quantity !== 0 ? prod.quantity : ''}</div>
+                {prod.quantity === 0 ? (
+                  <button onClick={() => props.cartHandler(prod.id, prod)}>
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div>
+                    <button onClick={() => props.cartHandler(prod.id, prod)}>
+                      +
+                    </button>
+                    <button
+                      onClick={() => props.cartHandler(prod.id, prod, false)}
+                    >
+                      -
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Shop;
+
+{
+  /* <ProductCard
+  cart={props.cart}
+  cartHandler={props.updateCart}
+  products={props.products}
+/>; */
+}
