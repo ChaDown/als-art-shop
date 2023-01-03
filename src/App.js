@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dotImg from './imgs/dot.jpg';
 import ganesha from './imgs/ele.jpg';
 import elephant from './imgs/ele2.jpg';
@@ -32,11 +32,18 @@ function App() {
     { id: 8, name: 'Yellow Lotus', price: 39.99, image: yellow, quantity: 0 },
   ]);
 
-  const [cart, setCart] = useState({
-    products: [],
-    visible: false,
-    totalQty: 0,
-    totalPrice: 0,
+  const [cart, setCart] = useState(() => {
+    //Get stored value
+    const savedCart = JSON.parse(localStorage.getItem('cart'));
+
+    return (
+      savedCart || {
+        products: [],
+        visible: false,
+        totalQty: 0,
+        totalPrice: 0,
+      }
+    );
   });
 
   function updateCart(id, prod, add = true) {
@@ -77,10 +84,16 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    //Store cart to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
   return (
     <div>
-      <NavBar cart={cart} toggleCart={toggleCart} />
+      <div className={cart.visible ? 'overlay' : ''}></div>
       <Cart cart={cart} cartHandler={updateCart} toggleCart={toggleCart} />
+      <NavBar cart={cart} toggleCart={toggleCart} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route
