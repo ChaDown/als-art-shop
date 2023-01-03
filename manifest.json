@@ -1,0 +1,25 @@
+{
+  "short_name": "Al's Art Shop",
+  "name": "Al's Art Shop",
+  "icons": [
+    {
+      "src": "yel2.jpg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "yel2.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "yel2.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
