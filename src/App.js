@@ -95,7 +95,7 @@ function App() {
       <Cart cart={cart} cartHandler={updateCart} toggleCart={toggleCart} />
       <NavBar cart={cart} toggleCart={toggleCart} />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/als-art-shop' element={<Home />} />
         <Route
           path='/shop'
           element={
