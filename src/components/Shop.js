@@ -3,6 +3,17 @@ import './styles/shop.css';
 import cartImg from '../imgs/cart-outline.svg';
 
 const Shop = (props) => {
+  // function which takes each product, checks if it's in the cart and updates the shop product cards with the quantity of each item already in the cart.
+  function getProdCartItemQty(prod) {
+    const cartIndex = props.cart.products.findIndex((el) => el.id === prod.id);
+
+    if (cartIndex === -1) return 0;
+
+    const itemQty = props.cart.products[cartIndex].quantity;
+
+    return itemQty;
+  }
+
   return (
     <div className='content'>
       <div>
@@ -14,10 +25,13 @@ const Shop = (props) => {
               <div className='productBottomRow'>
                 <span className='price'>€{prod.price}</span>
                 <div>
-                  {prod.quantity !== 0 ? prod.quantity : ''}
-                  {prod.quantity !== 0 ? ' in Cart' : ''}
+                  {getProdCartItemQty(prod) !== 0
+                    ? getProdCartItemQty(prod)
+                    : ''}
+                  {getProdCartItemQty(prod) !== 0 ? ' in Cart' : ''}
                 </div>
-                {prod.quantity === 0 ? (
+
+                {getProdCartItemQty(prod) === 0 ? (
                   <button
                     className='addCartBtn'
                     onClick={() => props.cartHandler(prod.id, prod)}
