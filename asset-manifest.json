@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/als-art-shop/static/css/main.3b872d55.css",
-    "main.js": "/als-art-shop/static/js/main.f344d530.js",
+    "main.js": "/als-art-shop/static/js/main.46124234.js",
     "static/js/787.a84499ba.chunk.js": "/als-art-shop/static/js/787.a84499ba.chunk.js",
     "static/media/vid.mp4": "/als-art-shop/static/media/vid.a62f820c709d1d51fcd9.mp4",
     "static/media/bgmanda.jpg": "/als-art-shop/static/media/bgmanda.832be4626ae97509e074.jpg",
@@ -16,11 +16,11 @@
     "index.html": "/als-art-shop/index.html",
     "static/media/cart-outline.svg": "/als-art-shop/static/media/cart-outline.b07eab5d9bdef2d11b40b0ef1b8ce9d1.svg",
     "main.3b872d55.css.map": "/als-art-shop/static/css/main.3b872d55.css.map",
-    "main.f344d530.js.map": "/als-art-shop/static/js/main.f344d530.js.map",
+    "main.46124234.js.map": "/als-art-shop/static/js/main.46124234.js.map",
     "787.a84499ba.chunk.js.map": "/als-art-shop/static/js/787.a84499ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3b872d55.css",
-    "static/js/main.f344d530.js"
+    "static/js/main.46124234.js"
   ]
 }
